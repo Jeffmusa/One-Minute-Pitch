@@ -33,20 +33,20 @@ class InterviewForm(FlaskForm):
 
 
 class PromotionCommentForm(FlaskForm):
-    comment = StringField('post', validators=[Required()])
+    comment = StringField('Comment: ', validators=[Required()])
     submit = SubmitField('Submit')
 
 
 class PickCommentForm(FlaskForm):
-    comment = StringField('post', validators=[Required()])
+    comment = StringField('Comment:', validators=[Required()])
     submit = SubmitField('Submit')
 
 
 class ProductionCommentForm(FlaskForm):
-    comment = StringField('post', validators=[Required()])
+    comment = StringField('Comment: ', validators=[Required()])
     submit = SubmitField('Submit')
 
 
 class InterviewCommentForm(FlaskForm):
-    comment = StringField('post', validators=[Required()])
+    comment = StringField('Comment: ', validators=[Required()])
     submit = SubmitField('Submit')

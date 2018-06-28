@@ -2,8 +2,9 @@
 {% import 'bootstrap/wtf.html' as wtf%}
 
 {% block content %}
-<div>{{production.post}}</div>
-<div>{{production.body}}</div>
+<div class="container-fluid">
+    <div><h2>{{production.post}}</h2></div>
+    <div><p>{{production.body}}</p></div>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script type=text/javascript>
@@ -31,21 +32,20 @@
 <!--button-->
 
 <form>
-    <a href=# id=test><button class='btn btn-default'>Like</button></a>
-    <div id="likes"></div>
-</form>
-<form>
-    <a href=# id=tes><button class='btn btn-default'>Dislike</button></a>
-    <div id="unlikes"></div>
+    <a href=# id=test><button class='btn btn-success'>Like</button></a><span id="likes"></span>
+
+    <a href=# id=tes><button class='btn btn-danger'>Dislike</button></a><span id="unlikes"></span>
 </form>
 
 
 {{ wtf.quick_form(comment_form) }}
 
+
 {%for comment in comments %}
-<div class="panel">{{comment.comment}}</div>
-{{comment.user.username}}
+    <div class="panel"><h5>{{comment.comment}}</h5>
+    <h4> &nbsp; {{comment.user.username}}</h4></div>
 {%endfor%}
+</div>
 
 
 

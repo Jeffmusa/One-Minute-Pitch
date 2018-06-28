@@ -17,7 +17,7 @@ def index():
     View root page function that returns the index page and its data
     """
 
-    title = 'Home'
+    title = 'Pitchego'
 
     return render_template('index.html', title=title)
 
@@ -25,17 +25,18 @@ def index():
 @main.route('/user/<uname>')
 def profile(uname):
     user = User.query.filter_by(username=uname).first()
-
+    title = 'Profile for ' + uname
     if user is None:
         abort(404)
 
-    return render_template("profile/profile.html", user=user)
+    return render_template("profile/profile.html", user=user, title=title)
 
 
 @main.route('/user/<uname>/update', methods=['GET', 'POST'])
 @login_required
 def update_profile(uname):
     user = User.query.filter_by(username=uname).first()
+    title = 'Update profile for ' + uname
     if user is None:
         abort(404)
 
@@ -49,7 +50,7 @@ def update_profile(uname):
 
         return redirect(url_for('.profile', uname=user.username))
 
-    return render_template('profile/update.html', form=form)
+    return render_template('profile/update.html', form=form, title=title)
 
 
 @main.route('/user/<uname>/update/pic', methods=['POST'])
@@ -68,32 +69,35 @@ def update_pic(uname):
 @login_required
 def pick():
     form = PickForm()
+    title = 'Post a pitch'
     if form.validate_on_submit():
         post = form.post.data
         body = form.body.data
         new_pick = Pick(post=post, user=current_user, body=body)
         new_pick.save_pick()
         return redirect(url_for('.listpickup'))
-    return render_template("pick_up_post.html", pick_form=form)
+    return render_template("pick_up_post.html", pick_form=form, title=title)
 
 
 @main.route('/category/promotion-post', methods=['GET', 'POST'])
 @login_required
 def promotion():
     form = PromotionForm()
+    title = 'Post a pitch'
     if form.validate_on_submit():
         post = form.post.data
         body = form.body.data
         new_promotion = Promotion(post=post, user=current_user, body=body)
         new_promotion.save_promotion()
         return redirect(url_for('.listpromotion'))
-    return render_template("promotion_post.html", promotion_form=form)
+    return render_template("promotion_post.html", promotion_form=form, title=title)
 
 
 @main.route('/category/production-post', methods=['GET', 'POST'])
 @login_required
 def production():
     form = ProductionForm()
+    title = 'Post a pitch'
     if form.validate_on_submit():
         post = form.post.data
         body = form.body.data
@@ -107,19 +111,21 @@ def production():
 @login_required
 def interview():
     form = InterviewForm()
+    title = 'Post a pitch'
     if form.validate_on_submit():
         post = form.post.data
         body = form.body.data
         new_interview = Interview(post=post, user=current_user, body=body)
         new_interview.save_production()
         return redirect(url_for('.listinterview'))
-    return render_template("interview_post.html", interview_form=form)
+    return render_template("interview_post.html", interview_form=form,title=title)
 
 
 @main.route('/category/promotion')
 def listpromotion():
+    title = 'Promotion'
     posts = Promotion.query.all()
-    return render_template("promotion.html", mypost=posts)
+    return render_template("promotion.html", mypost=posts,title=title)
 
 
 @main.route('/promotion/<int:id>', methods=['POST', 'GET'])
@@ -137,8 +143,9 @@ def displaypromotion(id):
 
 @main.route('/category/pickup')
 def listpickup():
+    title = 'Pick up'
     posts = Pick.query.all()
-    return render_template("pick_up.html", mypost=posts)
+    return render_template("pick_up.html", mypost=posts, title=title)
 
 
 @main.route('/pickup/<int:id>', methods=['GET', 'POST'])
@@ -156,8 +163,9 @@ def displaypickup(id):
 
 @main.route('/category/production')
 def listproduction():
+    title = 'Production'
     posts = Production.query.all()
-    return render_template("production.html", mypost=posts)
+    return render_template("production.html", mypost=posts,title=title)
 
 
 @main.route('/production/<int:id>', methods=['GET', 'POST'])
@@ -193,8 +201,9 @@ def background_processs():
 
 @main.route('/category/interview')
 def listinterview():
+    title = 'Interview'
     posts = Interview.query.all()
-    return render_template("interview.html", mypost=posts)
+    return render_template("interview.html", mypost=posts,title=title)
 
 
 @main.route('/interview/<int:id>', methods=['GET', 'POST'])
