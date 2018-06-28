@@ -1,1 +1,3 @@
-#!/usr/bin/env bashpython manage.py server
+#!/usr/bin/env bash
+
+python manage.py server
