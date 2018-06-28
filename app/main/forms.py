@@ -26,3 +26,22 @@ class InterviewForm(FlaskForm):
     body = TextAreaField('Post', validators=[Required()])
     submit = SubmitField('Submit')
 
+
+class PromotionCommentForm(FlaskForm):
+    comment = StringField('post', validators=[Required()])
+    submit = SubmitField('Submit')
+
+
+class PickCommentForm(FlaskForm):
+    comment = StringField('post', validators=[Required()])
+    submit = SubmitField('Submit')
+
+
+class ProductionCommentForm(FlaskForm):
+    comment = StringField('post', validators=[Required()])
+    submit = SubmitField('Submit')
+
+
+class InterviewCommentForm(FlaskForm):
+    comment = StringField('post', validators=[Required()])
+    submit = SubmitField('Submit')
