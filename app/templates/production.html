@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<a href="/category/production-post" ><button class="btn">Post</button></a>
+{%for production in mypost%}
+<div class="panel"><a href="/production/{{production.id}}">{{production.post}}</a></div>
+by {{production.user.username}}
+{%endfor%}
+{% endblock %}

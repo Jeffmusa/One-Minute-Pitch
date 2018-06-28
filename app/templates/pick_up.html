@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<a href="/category/pickup-post" ><button class="btn">Post</button></a>
+{%for pick in mypost%}
+<div class="panel"><a href="/pickup/{{pick.id}}">{{pick.post}}</a></div>
+by {{pick.user.username}}
+{%endfor%}
+
+{% endblock %}

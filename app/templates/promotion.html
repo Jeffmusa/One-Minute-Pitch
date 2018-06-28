@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<a href="/category/promotion-post" ><button class="btn">Post</button></a>
+{%for promotion in mypost%}
+<div class="panel"><a href="/promotion/{{promotion.id}}">{{promotion.post}}</a></div>
+by {{promotion.user.username}}
+{%endfor%}
+{% endblock %}

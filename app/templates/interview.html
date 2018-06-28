@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<a href="/category/interview-post"><button class="btn">Post</button></a>
+{%for interview in mypost%}
+<div class="panel"><a href="/interview/{{interview.id}}">{{interview.post}}</a></div>
+by {{interview.user.username}}
+{%endfor%}
+{% endblock %}
+
