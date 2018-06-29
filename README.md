@@ -24,6 +24,7 @@ The like buttons are not properly linked
 Python
 HTML
 CCS3
+CCS3
 The text editor used is Pycharm
 
 
@@ -33,7 +34,7 @@ The text editor used is Pycharm
 keithmzazam@gmail.com
 
 
-##LICENSE
+## LICENSE
 
 
 MIT license
