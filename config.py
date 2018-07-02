@@ -5,7 +5,7 @@ class Config:
     """
     General configuration parent class
     """
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://mzaza:password@localhost/pitch'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://midik:12345@localhost/kdpitch'
     UPLOADED_PHOTOS_DEST = 'app/static/photos'
     SECRET_KEY=os.environ.get('SECRET_KEY')
 
