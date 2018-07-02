@@ -11,10 +11,10 @@ from flask_migrate import Migrate, MigrateCommand
 # Creating app instance
 # app = create_app('test')
 # app = create_app('development')
-app = create_app('production')
+app = create_app('development')
 
 
-# Create manager instance 
+# Create manager instance
 manager = Manager(app)
 
 # Create migrate instance
@@ -41,4 +41,5 @@ def make_shell_context():
 
 
 if __name__ == '__main__':
-    manager.run()
+    app.secret_key = 'moringaschool'
+    app.run(host='0.0.0.0', port='5032')
