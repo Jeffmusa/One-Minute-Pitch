@@ -21,13 +21,12 @@ The like buttons are not properly linked
 ## Technologies Used
 
 
-Python3.6
-HTML
-CCS3
-CCS3
-Flask
-Bootstrap
-Ajax
+* Python3.6
+* HTML
+* Css
+* Flask
+* Bootstrap
+* Ajax
 
 ## Support and contact details
 
