@@ -1,6 +1,6 @@
 ## Specifications
 
-### Pitchego specifications
+### One Time Pitch specifications
 A user can see the pitches other people have posted.
 
 A user can vote on a pitch and give it a downvote or upvote.
