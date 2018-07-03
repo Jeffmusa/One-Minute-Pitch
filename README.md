@@ -1,10 +1,10 @@
 # PITCHEGO
 
-#### https://pitchego.herokuapp.com/
+
 
 #### 29/06/18
 
-#### By KEITH MZAZA
+#### By KINUTHIA DAVID
 
 ## Description
 
@@ -21,20 +21,18 @@ The like buttons are not properly linked
 ## Technologies Used
 
 
-Python
+Python3.6
 HTML
 CCS3
 CCS3
-The text editor used is Pycharm
-
+Flask
+Bootstrap
+Ajax
 
 ## Support and contact details
 
 
-keithmzazam@gmail.com
+kd.kinuthiadavid@gamil.com
 
 
 ## LICENSE
-
-
-MIT license
